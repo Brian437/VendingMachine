@@ -70,25 +70,45 @@ namespace VendingMachineForm
 
         private void btnGetDrinks_Click(object sender, EventArgs e)
         {
-            int totalValue = 0;
+            int coinValue = 0;
+            int drinkValue = 0;
             try
             {
                 foreach (CoinLayoutGroup coinLayoutGroup in coinLayoutGroupList)
                 {
-                    int coinValue = coinLayoutGroup.Coin.CoinValue;
+                    Coin coin = coinLayoutGroup.Coin;
+                    //int coinValue = coin.CoinValue;
                     int quanity = int.Parse(coinLayoutGroup.TextBox.Text);
-                    totalValue += coinValue * quanity;
+                    coinValue += coin.CoinValue * quanity;
+
+                    Console.WriteLine(coin.PluralName + " : " + coin.Quanity);
                 }
-                Console.WriteLine("Total Value : "+totalValue);
+                Console.WriteLine("Total Value : "+ coinValue);
 
                 foreach(DrinkLayoutGroup drinkLayoutGroup in drinkLayoutGroupList)
                 {
+                    Drink drink = drinkLayoutGroup.Drink;
                     int quanity = int.Parse(drinkLayoutGroup.TextBox.Text);
-                    if (drinkLayoutGroup.Drink.Quanity<quanity)
+                    if (drink.Quanity<quanity)
                     {
-                        throw new Exception("insufficient supplies in vending machine");
+                        throw new Exception("Insufficient supplies in vending machine");
                     }
-                    drinkLayoutGroup.Drink.Quanity -= quanity;
+                    drinkValue += quanity * drink.Price;
+                }
+                if(drinkValue>coinValue)
+                {
+                    throw new Exception("Insufficient money");
+                }
+                foreach (CoinLayoutGroup coinLayoutGroup in coinLayoutGroupList)
+                {
+
+                }
+
+                foreach (DrinkLayoutGroup drinkLayoutGroup in drinkLayoutGroupList)
+                {
+                    Drink drink = drinkLayoutGroup.Drink;
+                    int quanity = int.Parse(drinkLayoutGroup.TextBox.Text);
+                    drink.Quanity -= quanity;
                     drinkLayoutGroup.UpdateInfo();
                 }
             }
