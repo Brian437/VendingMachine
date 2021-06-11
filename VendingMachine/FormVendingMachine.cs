@@ -44,7 +44,7 @@ namespace VendingMachineForm
 
             vendingMachine.Coins.Add(new Coin("Penny", "Pennies", 1, 10));
             vendingMachine.Coins.Add(new Coin("Nickel", "Nickels", 5, 5));
-            vendingMachine.Coins.Add(new Coin("Dime", "Dimes", 10, 100));
+            vendingMachine.Coins.Add(new Coin("Dime", "Dimes", 10, 25));
             vendingMachine.Coins.Add(new Coin("Quarter", "Quarters", 25, 25));
 
             vendingMachine.Drinks.Add(new Drink("Coke", 25, 5));
@@ -74,6 +74,10 @@ namespace VendingMachineForm
             int coinValue = 0;
             int drinkValue = 0;
             rtxtOutput.Text = "";
+            //Quanity list is used to revert back to old quanity incase an error occurs
+            List<int> coinQuanityList = new List<int>();
+            List<int> drinkQuanityList = new List<int>();
+            bool quanityChanged = false;
             try
             {
                 //Valadation
@@ -85,11 +89,12 @@ namespace VendingMachineForm
                     {
                         throw new Exception("must be a positive number");
                     }
-                    else if(quanity>coin.Quanity)
-                    {
-                        throw new Exception("Insufficient coins in possesion");
-                    }
+                    //else if(quanity>coin.Quanity)
+                    //{
+                    //    throw new Exception("Insufficient coins in possesion");
+                    //}
                     coinValue += coin.CoinValue * quanity;
+                    coinQuanityList.Add(coin.Quanity);
                 }
 
                 foreach(DrinkLayoutGroup drinkLayoutGroup in drinkLayoutGroupList)
@@ -105,6 +110,7 @@ namespace VendingMachineForm
                         throw new Exception("Insufficient supplies in vending machine");
                     }
                     drinkValue += quanity * drink.Price;
+                    drinkQuanityList.Add(drink.Quanity);
                 }
                 if(drinkValue>coinValue)
                 {
@@ -112,14 +118,9 @@ namespace VendingMachineForm
                 }
 
 
-                
-                foreach (CoinLayoutGroup coinLayoutGroup in coinLayoutGroupList)
-                {
-                    Coin coin = coinLayoutGroup.Coin;
-                    int quanity = int.Parse(coinLayoutGroup.TextBox.Text);
-                    coin.Quanity -= quanity;
-                }
-                    foreach (DrinkLayoutGroup drinkLayoutGroup in drinkLayoutGroupList)
+
+                quanityChanged = true;
+                foreach (DrinkLayoutGroup drinkLayoutGroup in drinkLayoutGroupList)
                 {
                     Drink drink = drinkLayoutGroup.Drink;
                     int quanity = int.Parse(drinkLayoutGroup.TextBox.Text);
@@ -133,16 +134,16 @@ namespace VendingMachineForm
                 {
                     Coin coin = vendingMachine.Coins[i];
                     int quantity = 0;
-                    if(changeValue<coin.CoinValue)
+                    if(changeValue<coin.CoinValue || coin.Quanity<=0)
                     {
                         continue;
                     }
-                    while(changeValue >= coin.CoinValue)
+                    while (changeValue >= coin.CoinValue && coin.Quanity > quantity)
                     {
                         changeValue -= coin.CoinValue;
                         quantity++;
                     }
-                    coin.Quanity += quantity;
+                    coin.Quanity -= quantity;
                     if(quantity>1)
                     {
                         changeMessage += quantity+" " + coin.PluralName+ "\r\n";
@@ -152,7 +153,17 @@ namespace VendingMachineForm
                         changeMessage += "1 " + coin.SingluarName + "\r\n";
                     }
                 }
+                if(changeValue>0)
+                {
+                    throw new Exception("Not sufficient change in the inventory");
+                }
 
+                foreach (CoinLayoutGroup coinLayoutGroup in coinLayoutGroupList)
+                {
+                    Coin coin = coinLayoutGroup.Coin;
+                    int quanity = int.Parse(coinLayoutGroup.TextBox.Text);
+                    coin.Quanity += quanity;
+                }
                 rtxtOutput.Text += "Drinks purchesed\r\n";
                 if(changeMessage!="")
                 {
@@ -161,6 +172,20 @@ namespace VendingMachineForm
             }
             catch(Exception ex)
             {
+                if(quanityChanged)
+                {
+                    for (int i = 0; i < vendingMachine.Coins.Count; i++)
+                    {
+                        Coin coin = vendingMachine.Coins[i];
+                        coin.Quanity = coinQuanityList[i];
+                    }
+                    for (int i = 0; i < vendingMachine.Drinks.Count; i++)
+                    {
+                        Drink drink = vendingMachine.Drinks[i];
+                        drink.Quanity = drinkQuanityList[i];
+                    }
+                }
+                
                 rtxtOutput.Text += "ERROR:"+ex.Message + "\r\n";
             }
             UpdateCoinQuantity();
