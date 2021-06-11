@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "jkMJb9xiRO+MCA83icNovlz1vPt3t9FlL8XPIE5LJs6mvpzxnQ6WBMulVR9yNa5rOEEW4GrOhJ3/3kcDOmrRKw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Brian\\Source\\Repos\\VendingMachine\\VendingMachineModel\\VendingMachineModel.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Brian\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

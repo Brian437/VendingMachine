@@ -1,0 +1,9 @@
+C:\Users\Brian\Source\Repos\VendingMachine\VendingMachineModel\bin\Debug\netstandard2.0\VendingMachineModel.deps.json
+C:\Users\Brian\Source\Repos\VendingMachine\VendingMachineModel\bin\Debug\netstandard2.0\VendingMachineModel.dll
+C:\Users\Brian\Source\Repos\VendingMachine\VendingMachineModel\bin\Debug\netstandard2.0\VendingMachineModel.pdb
+C:\Users\Brian\Source\Repos\VendingMachine\VendingMachineModel\obj\Debug\netstandard2.0\VendingMachineModel.csprojAssemblyReference.cache
+C:\Users\Brian\Source\Repos\VendingMachine\VendingMachineModel\obj\Debug\netstandard2.0\VendingMachineModel.AssemblyInfoInputs.cache
+C:\Users\Brian\Source\Repos\VendingMachine\VendingMachineModel\obj\Debug\netstandard2.0\VendingMachineModel.AssemblyInfo.cs
+C:\Users\Brian\Source\Repos\VendingMachine\VendingMachineModel\obj\Debug\netstandard2.0\VendingMachineModel.csproj.CoreCompileInputs.cache
+C:\Users\Brian\Source\Repos\VendingMachine\VendingMachineModel\obj\Debug\netstandard2.0\VendingMachineModel.dll
+C:\Users\Brian\Source\Repos\VendingMachine\VendingMachineModel\obj\Debug\netstandard2.0\VendingMachineModel.pdb

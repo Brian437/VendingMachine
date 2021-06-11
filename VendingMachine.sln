@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachineForm", "VendingMachine\VendingMachineForm.csproj", "{303DE672-7393-48FC-B6EC-C9EFC9E0E009}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachineModel", "VendingMachineModel\VendingMachineModel.csproj", "{415004B1-5867-435C-99ED-E733BF941926}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{303DE672-7393-48FC-B6EC-C9EFC9E0E009}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{303DE672-7393-48FC-B6EC-C9EFC9E0E009}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{303DE672-7393-48FC-B6EC-C9EFC9E0E009}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{303DE672-7393-48FC-B6EC-C9EFC9E0E009}.Release|Any CPU.Build.0 = Release|Any CPU
+		{415004B1-5867-435C-99ED-E733BF941926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{415004B1-5867-435C-99ED-E733BF941926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{415004B1-5867-435C-99ED-E733BF941926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{415004B1-5867-435C-99ED-E733BF941926}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DB433FA-24C2-448D-8E1F-FAF9F05A8D57}
+	EndGlobalSection
+EndGlobal
