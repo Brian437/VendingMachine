@@ -9,7 +9,7 @@ using System.Windows.Forms;
 /*
  * Created by Brian Chaves
  * Created on June 10,2021
- * Updateed on June 10, 2021
+ * Updateed on June 11, 2021
 */
 
 namespace VendingMachineForm
@@ -42,9 +42,15 @@ namespace VendingMachineForm
             get { return textBox; }
         }
 
+        private EventHandler textBoxChange;
+        public EventHandler TextBoxChange
+        {
+            get { return textBoxChange; }
+            set { textBoxChange = value; }
+        }
+
         public override void GenerateItems()
         {
-            //throw new NotImplementedException();
 
             mainLabel = new System.Windows.Forms.Label();
             mainLabel.AutoSize = true;
@@ -79,12 +85,14 @@ namespace VendingMachineForm
         }
         private void TextChanged(object sender, EventArgs e)
         {
-
+            if(TextBoxChange!=null)
+            {
+                TextBoxChange(sender, e);
+            }
         }
 
         public override void UpdateInfo()
         {
-            //throw new NotImplementedException();
             if(info!=null)
             {
                 info.Text = Drink.Quanity + " drinks available, Cost=" + Drink.Price;

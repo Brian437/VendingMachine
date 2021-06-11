@@ -1,6 +1,6 @@
 ﻿namespace VendingMachineForm
 {
-    partial class Form1
+    partial class FormVendingMachine
     {
         /// <summary>
         /// Required designer variable.
@@ -38,6 +38,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblOrderTotal = new System.Windows.Forms.Label();
             this.btnGetDrinks = new System.Windows.Forms.Button();
+            this.rtxtCoinQuantity = new System.Windows.Forms.RichTextBox();
+            this.rtxtOutput = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -132,7 +134,7 @@
             // btnGetDrinks
             // 
             this.btnGetDrinks.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGetDrinks.Location = new System.Drawing.Point(429, 321);
+            this.btnGetDrinks.Location = new System.Drawing.Point(477, 339);
             this.btnGetDrinks.Name = "btnGetDrinks";
             this.btnGetDrinks.Size = new System.Drawing.Size(160, 38);
             this.btnGetDrinks.TabIndex = 9;
@@ -140,11 +142,31 @@
             this.btnGetDrinks.UseVisualStyleBackColor = true;
             this.btnGetDrinks.Click += new System.EventHandler(this.btnGetDrinks_Click);
             // 
-            // Form1
+            // rtxtCoinQuantity
+            // 
+            this.rtxtCoinQuantity.Location = new System.Drawing.Point(13, 383);
+            this.rtxtCoinQuantity.Name = "rtxtCoinQuantity";
+            this.rtxtCoinQuantity.ReadOnly = true;
+            this.rtxtCoinQuantity.Size = new System.Drawing.Size(135, 96);
+            this.rtxtCoinQuantity.TabIndex = 10;
+            this.rtxtCoinQuantity.Text = "";
+            // 
+            // rtxtOutput
+            // 
+            this.rtxtOutput.Location = new System.Drawing.Point(155, 383);
+            this.rtxtOutput.Name = "rtxtOutput";
+            this.rtxtOutput.ReadOnly = true;
+            this.rtxtOutput.Size = new System.Drawing.Size(482, 96);
+            this.rtxtOutput.TabIndex = 11;
+            this.rtxtOutput.Text = "";
+            // 
+            // FormVendingMachine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 378);
+            this.ClientSize = new System.Drawing.Size(649, 489);
+            this.Controls.Add(this.rtxtOutput);
+            this.Controls.Add(this.rtxtCoinQuantity);
             this.Controls.Add(this.lblCoin0);
             this.Controls.Add(this.txtCoin0);
             this.Controls.Add(this.btnGetDrinks);
@@ -155,7 +177,7 @@
             this.Controls.Add(this.lblDrink0);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "FormVendingMachine";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -176,6 +198,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblOrderTotal;
         private System.Windows.Forms.Button btnGetDrinks;
+        private System.Windows.Forms.RichTextBox rtxtCoinQuantity;
+        private System.Windows.Forms.RichTextBox rtxtOutput;
     }
 }
 

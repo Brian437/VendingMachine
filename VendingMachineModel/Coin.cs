@@ -5,7 +5,7 @@ using System.Text;
 /*
  * Created by Brian Chaves
  * Created on June 09,2021
- * Updateed on June 10, 2021
+ * Updateed on June 11, 2021
 */
 
 namespace VendingMachineModel
@@ -72,6 +72,13 @@ namespace VendingMachineModel
             SingluarName = singluarName;
             PluralName = pluralName;
             CoinValue = coinValue;
+            Quanity = quanity;
+        }
+        public Coin(Coin coin,int quanity=0)
+        {
+            SingluarName = coin.SingluarName;
+            PluralName = coin.PluralName;
+            CoinValue = coin.CoinValue;
             Quanity = quanity;
         }
     }

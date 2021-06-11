@@ -4,10 +4,10 @@ C:\Users\Brian\Source\Repos\VendingMachine\VendingMachine\obj\Debug\VendingMachi
 C:\Users\Brian\Source\Repos\VendingMachine\VendingMachine\obj\Debug\VendingMachineForm.csproj.GenerateResource.cache
 C:\Users\Brian\Source\Repos\VendingMachine\VendingMachine\obj\Debug\VendingMachineForm.csproj.CoreCompileInputs.cache
 C:\Users\Brian\Source\Repos\VendingMachine\VendingMachine\obj\Debug\VendingMachineForm.csproj.CopyComplete
-C:\Users\Brian\Source\Repos\VendingMachine\VendingMachine\obj\Debug\VendingMachineForm.Form1.resources
 C:\Users\Brian\Source\Repos\VendingMachine\VendingMachine\obj\Debug\VendingMachineForm.Properties.Resources.resources
 C:\Users\Brian\Source\Repos\VendingMachine\VendingMachine\bin\Debug\VendingMachineForm.exe.config
 C:\Users\Brian\Source\Repos\VendingMachine\VendingMachine\bin\Debug\VendingMachineForm.exe
 C:\Users\Brian\Source\Repos\VendingMachine\VendingMachine\bin\Debug\VendingMachineForm.pdb
 C:\Users\Brian\Source\Repos\VendingMachine\VendingMachine\obj\Debug\VendingMachineForm.exe
 C:\Users\Brian\Source\Repos\VendingMachine\VendingMachine\obj\Debug\VendingMachineForm.pdb
+C:\Users\Brian\Source\Repos\VendingMachine\VendingMachine\obj\Debug\VendingMachineForm.FormVendingMachine.resources

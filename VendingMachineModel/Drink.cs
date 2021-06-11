@@ -12,7 +12,6 @@ namespace VendingMachineModel
 {
     public class Drink
     {
-        //private int id;
         private string name;
         public string Name
         {

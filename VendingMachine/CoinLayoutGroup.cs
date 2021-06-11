@@ -40,7 +40,6 @@ namespace VendingMachineForm
             label = new System.Windows.Forms.Label();
             label.AutoSize = true;
             label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //label.Location = new System.Drawing.Point(X, Y);
             label.Name = "lblCoin0";
             label.Size = new System.Drawing.Size(58, 20);
             label.TabIndex = 1;
@@ -48,7 +47,6 @@ namespace VendingMachineForm
             Form.Controls.Add(label);
 
             textBox = new TextBox();
-            //textBox.Location = new System.Drawing.Point(X, Y+23);
             textBox.Name = "txtCoin0";
             textBox.Size = new System.Drawing.Size(100, 20);
             textBox.TabIndex = 2;
@@ -71,7 +69,6 @@ namespace VendingMachineForm
 
         public override void UpdateLayout()
         {
-            //throw new NotImplementedException();
             label.Location = new System.Drawing.Point(X, Y);
             textBox.Location = new System.Drawing.Point(X, Y + 23);
         }
